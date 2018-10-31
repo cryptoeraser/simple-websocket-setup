@@ -29,8 +29,15 @@ var data_container = {
     'data' : null,
 };
 
+var emitter = function() {}
+var emission = function(data) {
+  emitter(data);
+}
+setInterval(emission, 20);
+// binance.connect(emission);
+
 wss.on('connection', function(ws) {
-    ws.on('message', function(message) {
+    emitter = function(data) {
         wss.clients.forEach(function(client) {
             // Debug
             console.log('[server:onMessage] received request:', message);
@@ -49,6 +56,10 @@ wss.on('connection', function(ws) {
             console.log('[server:onMessage] Sending:', transmission);
             client.send(transmission);
         });
+    }
+
+    ws.on('message', function(message) {
+
     });
 
     // Update carrier.

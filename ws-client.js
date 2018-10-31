@@ -36,19 +36,19 @@ ws.onmessage = function(payload) {
 // }}}1
 
 // Request with a button. {{{1
-var sendRequest = function() {
-    var _request = 'byClick';
-    console.log('[client] sent request:', _request);
-    ws.send(_request);
-};
+// var sendRequest = function() {
+//     var _request = 'byClick';
+//     console.log('[client] sent request:', _request);
+//     ws.send(_request);
+// };
 // }}}1
 
 // Request with Interval. {{{1
-var tickerCycle = setInterval(function() {
-    var _request = 'byInterval';
-    console.log('[client] sent request:', _request);
-    ws.send(_request);
-}, 1000);
+// var tickerCycle = setInterval(function() {
+//     var _request = 'byInterval';
+//     console.log('[client] sent request:', _request);
+//     ws.send(_request);
+// }, 1000);
 // }}}1
 
 // Set Title {{{1
